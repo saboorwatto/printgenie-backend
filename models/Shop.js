@@ -6,12 +6,11 @@ const shopSchema = new mongoose.Schema(
     owner: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
     location: { type: String },
     rating: { type: Number, default: 0 },
-    status: {
+      status: {
       type: String,
-      enum: ['Active', 'Inactive'],
-      default: 'Active',
-    },
-    imageUrl: { type: String, default: null },
+      enum: ['Pending', 'Active', 'Rejected'],
+      default: 'Pending',
+    },  imageUrl: { type: String, default: null },
   },
   { timestamps: true }
 );
